@@ -1,0 +1,32 @@
+# MapReduce Framework
+
+This directory contains a multi-threaded implementation of the MapReduce programming paradigm, designed for parallel data processing tasks.
+
+## Contents
+
+- **MapReduceFramework.h/cpp**: Provides the public API for running MapReduce jobs.
+- **MapReduceClient.h**: Interface that users implement to define map and reduce operations.
+- **MapReduceJob.h/cpp**: Internal implementation of job management and thread coordination.
+- **Barrier.h/cpp**: Synchronization primitive for coordinating threads at phase boundaries.
+- **Makefile**: Build script for compiling the framework.
+
+## Features
+
+- **Multi-Threading**: Efficiently distributes work across multiple threads.
+- **Stage Management**: Handles mapping, shuffling, and reducing phases automatically.
+- **Synchronization**: Implements thread coordination using barriers and semaphores.
+- **Progress Tracking**: Provides job state monitoring capabilities.
+- **Resource Management**: Carefully manages memory and thread lifetimes.
+
+## Usage
+
+1. Implement the `MapReduceClient` interface with your custom map and reduce operations
+2. Prepare your input data as an `InputVec`
+3. Start a job with `startMapReduceJob()`
+4. Monitor progress with `getJobState()`
+5. Wait for completion with `waitForJob()`
+6. Clean up with `closeJobHandle()`
+
+## Building
+
+Run `make` to build the library, which generates `libMapReduceFramework.a` for linking with client applications.

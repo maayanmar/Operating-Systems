@@ -1,0 +1,21 @@
+# Virtual Memory Management Library
+
+This directory contains the implementation of a virtual memory management library that simulates paging and address translation.
+
+## Contents
+
+- **VirtualMemory.h/cpp**: Core implementation of the virtual memory system.
+- **PhysicalMemory.h/cpp**: Interface for interacting with simulated physical memory.
+- **MemoryConstants.h**: Defines constants for memory layout and addressing.
+- **Makefile**: Build script for compiling the library.
+
+## Features
+
+- **Address Translation**: Converts virtual addresses to physical addresses using a hierarchical page table.
+- **Page Fault Handling**: Handles page faults with eviction and restoration mechanisms.
+- **Eviction Policy**: Implements a cyclic distance algorithm for efficient memory management.
+- **Memory Initialization**: Supports clearing and restoring memory frames.
+
+## Building
+
+Run `make` to build the library, which generates `libVirtualMemory.a` for use in other projects.
